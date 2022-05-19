@@ -17,3 +17,38 @@ If the element is 0 then swap the element with the element at index low and upda
 If the element is 1 then update mid = mid + 1
 If the element is 2 then swap the element with the element at index high and update high = high – 1 and update i = i – 1. As the swapped element is not processed
 Print the array.
+
+
+
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int l=0,mid=0,h=nums.length-1;
+        while(mid<=h)
+        {
+            if(nums[mid]==0)
+            {
+                int temp=0;
+                temp=nums[mid];
+                nums[mid]=nums[l];
+                nums[l]=temp;
+                l++;
+                mid++;
+            }
+            else if(nums[mid]==1)
+            {
+                mid++;
+            }
+            else if(nums[mid]==2)
+            {
+                int temp=0;
+                temp=nums[mid];
+                nums[mid]=nums[h];
+                nums[h]=temp;
+                h--;
+            }
+            System.out.println(l +" "+mid+" "+h);
+        }
+        
+    }
+}
