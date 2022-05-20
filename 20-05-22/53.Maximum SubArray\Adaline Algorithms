@@ -1,0 +1,52 @@
+Brute Force //O(n^2)
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum=0,large=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++)
+        {   sum=0;
+            for(int j=i;j<nums.length;j++)
+            {
+                sum +=nums[j];
+                if(sum>large)
+                {
+                    large=sum;
+                }
+            }
+        }
+        return large;
+        
+    }
+}
+
+Optimal Approach
+// Adaline Algorithm
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+        int sum=0,large=0;
+        if(nums.length!=0)
+            large=nums[0];
+        for(int i=0;i<nums.length;i++)
+        {
+                sum +=nums[i];
+                if(sum>large)
+                {
+                    large=sum;
+                }
+            if(sum<0)
+            {
+                sum=0;
+            }
+            }
+        return large;
+        
+    }
+}
+steps
+
+1.initialize large with first value of array//if(nums.length!=0)large=nums[0];
+2. iterate a through the loop
+3.change sum value to zero when it is negative
+
