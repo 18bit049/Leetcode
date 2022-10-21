@@ -25,7 +25,8 @@ class Solution {
         // code here
         if(N==0)
           return;
-          printGfg(N-1);
           System.out.print("GFG"+" ");
+          printGfg(N-1);
+         // System.out.print("GFG"+" ");
     }
 }
